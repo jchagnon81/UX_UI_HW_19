@@ -48,7 +48,6 @@ li a:hover{
 /* About Me Coding */
 
 .content {
-    background-color: black;
     color: white;
     margin-left: auto;
     margin-right: auto;
@@ -78,7 +77,6 @@ li a:hover{
 /* My Skills Coding */
 
 .mySkills {
-    background-color: black;
     color: white;
     margin-left: auto;
     margin-right: auto;
@@ -109,39 +107,17 @@ li a:hover{
 /* My Work Coding */
 
 .myWork {
-    background-color: black;
     color: white;
     margin-left: auto;
     margin-right: auto;
     width: 75%;
     padding: 25px;
-    border-color: #9E00BB;
-    border-style: dotted;
-    border-width: 2px;
 }
 
-.workGrid div {
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
-    border-color: plum;
-    border-style: dotted;
-    border-width: 2px;
-}
-
-.workGrid div img {
-    width: 75%;
-    height: auto;
-    border-color: orange;
-    border-style: dotted;
-    border-width: 2px;
-}
 
 .workGrid {
-    border-color: #D9FF59;
-    border-style: dotted;
-    border-width: 2px;
     display: grid;
+    row-gap: 20px;
     grid-template-columns: 250px 250px 250px;
     grid-template-rows: 175px 175px 175px 175px;
     align-items: center;
@@ -154,98 +130,75 @@ li a:hover{
     ;
 }
 
+.workGrid div {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;;
+    padding: 0px 25px;
+}
+
+.workGrid div img {
+    width: 80%;
+    height: auto;
+}
+
+
 .itemA {
     grid-area: "img";
-    border-color:green;
-    border-style: dotted;
-    border-width: 2px;
 }
 
 .itemB {
     grid-area: "img";
-    border-color:green;
-    border-style: dotted;
-    border-width: 2px;
 }
 
 
 .itemC {
     grid-area: "img";
-    border-color:green;
-    border-style: dotted;
-    border-width: 2px;
 }
 
 
 .itemD {
     grid-area: "img";
-    border-color:green;
-    border-style: dotted;
-    border-width: 2px;
 }
 
 
 .item1 {
     grid-area: "details";
-    border-color:green;
-    border-style: dotted;
-    border-width: 2px;
 }
 
 
 .item2 {
     grid-area: "details";
-    border-color:green;
-    border-style: dotted;
-    border-width: 2px;
 }
 
 
 .item3 {
     grid-area: "details";
-    border-color:green;
-    border-style: dotted;
-    border-width: 2px;
 }
 
 
 .item4 {
     grid-area: "details";
-    border-color:green;
-    border-style: dotted;
-    border-width: 2px;
 }
 
 
 .button1 {
     grid-area: "button";
-    border-color:green;
-    border-style: dotted;
-    border-width: 2px;
 }
 
 
 .button2 {
     grid-area: "button";
-    border-color:green;
-    border-style: dotted;
-    border-width: 2px;
 }
 
 
 .button3 {
     grid-area: "button";
-    border-color:green;
-    border-style: dotted;
-    border-width: 2px;
 }
 
 
 .button4 {
     grid-area: "button";
-    border-color:green;
-    border-style: dotted;
-    border-width: 2px;
 }
 
 
@@ -298,9 +251,10 @@ li a:hover{
 
     .workGrid {
         margin-top: 50px;
-        grid-template-columns: 350px;
+        grid-template-columns: 1fr;
         text-align: center;
-        grid-template-rows: 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px;
+        row-gap: 10px;
+        grid-template-rows: 200px 150px 100px 200px 150px 100px 200px 150px 100px 200px 150px 100px;
         grid-template-areas:
         "img"
         "details"
@@ -315,7 +269,7 @@ li a:hover{
 
     .workGrid div{
         margin: 0px;
-        width: 200px;
+        padding: 0px;
     }
 
 
