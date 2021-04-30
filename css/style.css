@@ -1,0 +1,323 @@
+html {
+    font-family: 'Source Serif Pro', serif;
+    background-color: #708090;
+}
+
+
+.logo img {
+    width: 40%;
+    margin-left: 55%;
+}
+
+/* Header and Nav */
+
+#Designer {
+    color: #228B22;
+    width: auto;
+    text-align: right;
+
+}
+
+.menu {
+    width: auto;
+    height: 100px;
+    padding: 0 0;
+    list-style-type: none;
+    text-align: right;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+li a:hover{
+    color: #D9FF59;
+    cursor: pointer;
+}
+
+/* Hero Content */
+
+
+.heroImg {
+    background-color: black;
+    padding: 25px;
+    color: white;
+}
+
+/* About Me Coding */
+
+.content {
+    background-color: black;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    padding: 20px;
+}
+
+.content img {
+    float: right;
+    margin: 20px;
+    width: 25%;
+    height: auto;
+}
+
+
+.Resume {
+    margin-right: auto;
+    margin-left: auto;
+    margin: 50px;
+    display: flex;
+    width: auto;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* My Skills Coding */
+
+.mySkills {
+    background-color: black;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 75%;
+}
+
+.mySkills img {
+    width: 100%;
+    height: auto;
+    min-width: 200px;
+}
+
+.flexContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    
+}
+
+.flexContainer div {
+    width: 25%;
+    margin: 20px;
+}
+
+
+/* My Work Coding */
+
+.myWork {
+    background-color: black;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    padding: 25px;
+    border-color: #9E00BB;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+.workGrid div {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    border-color: plum;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+.workGrid div img {
+    width: 75%;
+    height: auto;
+    border-color: orange;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+.workGrid {
+    border-color: #D9FF59;
+    border-style: dotted;
+    border-width: 2px;
+    display: grid;
+    grid-template-columns: 250px 250px 250px;
+    grid-template-rows: 175px 175px 175px 175px;
+    align-items: center;
+    justify-content: center;
+    grid-template-areas:
+    "img details button"
+    "img details button"
+    "img details button"
+    "img details button"
+    ;
+}
+
+.itemA {
+    grid-area: "img";
+    border-color:green;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+.itemB {
+    grid-area: "img";
+    border-color:green;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+
+.itemC {
+    grid-area: "img";
+    border-color:green;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+
+.itemD {
+    grid-area: "img";
+    border-color:green;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+
+.item1 {
+    grid-area: "details";
+    border-color:green;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+
+.item2 {
+    grid-area: "details";
+    border-color:green;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+
+.item3 {
+    grid-area: "details";
+    border-color:green;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+
+.item4 {
+    grid-area: "details";
+    border-color:green;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+
+.button1 {
+    grid-area: "button";
+    border-color:green;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+
+.button2 {
+    grid-area: "button";
+    border-color:green;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+
+.button3 {
+    grid-area: "button";
+    border-color:green;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+
+.button4 {
+    grid-area: "button";
+    border-color:green;
+    border-style: dotted;
+    border-width: 2px;
+}
+
+
+
+/* Button Code */
+
+.button {
+    background-color: #9E00BB;
+    color: white;
+    width: 150px;
+    text-align: center;
+    height: 50px;
+    transition: 0.5s;
+}
+
+.button:hover {
+    background-color:#EB7EFF;
+    color: black;
+    cursor: pointer;
+}
+
+
+/* Footer Code*/
+  
+
+.footer {
+    width: auto;
+    list-style-type: none;
+    background-color: #708090;
+}
+
+.footer li {
+    display: inline-block;
+    font-size: 15px;
+    padding: 10px;
+    position: relative;
+    left: 10%;
+}
+
+/* Media Query */
+
+@media only screen and (max-width: 600px) {
+    .flexContainer {
+        flex-direction: column;   
+    }
+    
+    .flexContainer div {
+        width: 100%;
+    }
+
+    .workGrid {
+        margin-top: 50px;
+        grid-template-columns: 350px;
+        text-align: center;
+        grid-template-rows: 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px 200px;
+        grid-template-areas:
+        "img"
+        "details"
+        "button"
+        ;
+    }
+
+    .myWork {
+        width: auto;
+        padding: 0px;
+    }
+
+    .workGrid div{
+        margin: 0px;
+        width: 200px;
+    }
+
+
+
+}
