@@ -3,11 +3,11 @@ html {
     background-color: #708090;
 }
 
-
 .logo img {
     width: 40%;
     margin-left: 55%;
 }
+
 
 /* Header and Nav */
 
@@ -58,20 +58,20 @@ li a:hover{
 
 /* Home Coding */
 
-.home h1 {
+.home {
+    padding: 0px;
     text-align: center;
-    font-size: 175px;
+    font-size: 150px;
     background: -webkit-linear-gradient(#EB7EFF, #9E00BB);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-.home h3 {
-    text-align: center;
-    background: -webkit-linear-gradient(#EB7EFF, #9E00BB);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+.animation div {
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 /* About Me Coding */

@@ -4,35 +4,85 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/style.css">
         <title>Rachael Chagnon - Professional Day Dreamer</title>
+
+                        
+                        
+                        <script>
+                        var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+                        function init() {
+                            canvas = document.getElementById("canvas");
+                            anim_container = document.getElementById("animation_container");
+                            dom_overlay_container = document.getElementById("dom_overlay_container");
+                            var comp=AdobeAn.getComposition("0AC841A4D3BA4AC79075A909EF45524D");
+                            var lib=comp.getLibrary();
+                            var loader = new createjs.LoadQueue(false);
+                            loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+                            loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+                            var lib=comp.getLibrary();
+                            loader.loadManifest(lib.properties.manifest);
+                        }
+                        function handleFileLoad(evt, comp) {
+                            var images=comp.getImages();	
+                            if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+                        }
+                        function handleComplete(evt,comp) {
+                            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+                            var lib=comp.getLibrary();
+                            var ss=comp.getSpriteSheet();
+                            var queue = evt.target;
+                            var ssMetadata = lib.ssMetadata;
+                            for(i=0; i<ssMetadata.length; i++) {
+                                ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+                            }
+                            exportRoot = new lib.dandelion_html5_merged();
+                            stage = new lib.Stage(canvas);	
+                            //Registers the "tick" event listener.
+                            fnStartAnimation = function() {
+                                stage.addChild(exportRoot);
+                                createjs.Ticker.framerate = lib.properties.fps;
+                                createjs.Ticker.addEventListener("tick", stage);
+                            }	    
+                            //Code to support hidpi screens and responsive scaling.
+                            AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+                            AdobeAn.compositionLoaded(lib.properties.id);
+                            fnStartAnimation();
+                        }
+                        </script>
+                        
     </head>
+                <header class="logo">
+                    <img src="images/logo.png" alt="Rachael Chagnon logo">
+                </header>
 
-        <body>
-
-            <header class="logo">
-                <img src="images/logo.png" alt="Rachael Chagnon logo">
-            </header>
-
+        <body onload="init();">
 
                 <section class="heroImg">
-                    <div><h2 id="Designer">Designer</h2></div>
-                    
-                    <div>
-                        <nav>
-                            <ul class="menu">
-                                <li style="text-decoration: underline"><b>Home</b></li>
-                                <li><a href="aboutme.html" target="_self">About Me</a></li>
-                                <li><a href="myskills.html" target="_self">My skills</a></li>
-                                <li><a href="mywork.html" target="_self">My work</a></li>
-                                <li><a href="contactme.html" target="_self">Contact me</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-
-                        <div class="home">
-                            <h1>WELCOME</h1>
-                            <h3>UNDER CONSTRUCTION</h3>
+                        <div><h2 id="Designer">Designer</h2></div>
                         
+                        <div>
+                            <nav>
+                                <ul class="menu">
+                                    <li style="text-decoration: underline"><b>Home</b></li>
+                                    <li><a href="aboutme.html" target="_self">About Me</a></li>
+                                    <li><a href="myskills.html" target="_self">My skills</a></li>
+                                    <li><a href="mywork.html" target="_self">My work</a></li>
+                                    <li><a href="contactme.html" target="_self">Contact me</a></li>
+                                </ul>
+                            </nav>
                         </div>
+
+                    <div class="animation">
+                        <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:391px; height:90px">
+                            <canvas id="canvas" width="391" height="90" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+                            <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:391px; height:90px; position: absolute; left: 0px; top: 0px; display: block;">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h1 class="home">WELCOME</h1>
+                            
+
+                       
                         
 
                 </section>
@@ -56,4 +106,6 @@
         </footer>
 
     <script src="js/index.js"></script>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="js/dandelion_html5_merged.js"></script>
 </html>
