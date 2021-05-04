@@ -56,6 +56,24 @@ li a:hover{
      z-index: 10;
 }
 
+/* Home Coding */
+
+.home h1 {
+    text-align: center;
+    font-size: 175px;
+    background: -webkit-linear-gradient(#EB7EFF, #9E00BB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+.home h3 {
+    text-align: center;
+    background: -webkit-linear-gradient(#EB7EFF, #9E00BB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
 /* About Me Coding */
 
 .content {
@@ -301,5 +319,9 @@ li a:hover{
         margin: 0px;
         padding: 0px;
     }
+
+    .home h1 {
+        font-size: 70px;
+      }
 
 }
