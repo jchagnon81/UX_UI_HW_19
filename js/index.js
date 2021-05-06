@@ -1,7 +1,18 @@
 /* Javascript */
 
-console.log("Your index.js file is loaded correctly!");
+$(document).ready(function(){
+    $('#animation').hide();
 
-$("#toggle").on("click", function(){
-    $("#animation").fadeToggle("slow" , "linear");
+    console.log("Your index.js file is loaded correctly!");
+
+    $("#toggle").on("click", function(){
+        $("#animation").fadeIn(2500);
+        console.log("You clicked on #toggle");
+    });
+
+    $("#animation").on("click", function() {
+        $("#animation").fadeOut(2500);
+        console.log("You clicked on #animation");
+    });
+
 });
